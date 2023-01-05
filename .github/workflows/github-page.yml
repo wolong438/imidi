@@ -1,0 +1,19 @@
+name: Build Vue
+on: [push]
+jobs:
+  build_vue:
+    runs-on: ubuntu-latest
+    name: Build Vue
+    steps:
+    - uses: actions/checkout@v2
+    - id: Build-Vue
+      uses: xRealNeon/VuePagesAction@1.0.1
+      with:
+        username: wolong438
+        reponame: imidi
+        token: ${{ secrets.ACTIONS_TOKEN }}
+        gitemail: wolong438@sina.com,
+        gitname: CI,
+        gitmsg: deploy,
+        cname: none,
+        useyarn: true
